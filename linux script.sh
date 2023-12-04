@@ -1,3 +1,3 @@
 #! /bin/bash
 
-echo "hello github"
+echo "hello github running on `hostname` server "

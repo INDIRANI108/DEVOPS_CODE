@@ -12,5 +12,4 @@ do
   echo "Memory Usage: $memUsage MB"
  
   # Sleep for 1 second
-  sleep 1
-done
+  done

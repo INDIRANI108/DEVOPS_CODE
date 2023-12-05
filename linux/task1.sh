@@ -10,6 +10,6 @@ do
   # Print the usage
   echo "CPU Usage: $cpuUsage%"
   echo "Memory Usage: $memUsage MB"
-  sleep 1 
+  #sleep 1 
   # Sleep for 1 second
   done

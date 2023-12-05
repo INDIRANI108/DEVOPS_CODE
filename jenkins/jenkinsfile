@@ -10,7 +10,7 @@ pipeline{
             stage('stage2'){
                 steps{
                    sh '''
-                        echo "Hello from stage2"
+                        echo "Hello from stage2 this is git hub `hostname` this"
                     '''               
                 }
             }          

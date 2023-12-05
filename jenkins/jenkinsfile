@@ -13,7 +13,13 @@ pipeline{
                         echo "Hello from stage2 this is git hub `hostname` this"
                     '''               
                 }
-            }          
+            }
+            stage('stage3'){
+                steps{
+                   sh '''
+                      bash ${WORKSPACE}/linux/script.sh
+                }
+            }
             
           }
             

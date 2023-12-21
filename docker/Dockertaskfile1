@@ -1,0 +1,23 @@
+# Use a base image with an operating system of your choice
+FROM ubuntu:18.04
+
+# Install OpenSSH server
+RUN apt-get update &&  apt-get install -y openssh-server
+#configure ssh
+RUN mkdir /var/run/sshd
+
+# Set the root password (CHANGE THIS TO YOUR DESIRED PASSWORD)
+RUN echo 'root:ramu' | chpasswd
+
+# Permit root login via SSH
+RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+
+# Use PAM to enable password authentication
+RUN sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config
+
+# Expose the SSH port
+EXPOSE 22
+
+# Start the SSH server
+#CMD ["service ssh start", "-D"]
+ENTRYPOINT ["/bin/bash","-c","service ssh start && bash" ]
